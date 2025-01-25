@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up | Burger Website</title>
+  
+  <style>
+    /* ... your existing CSS styles ... */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(248, 225, 183)
+    }
+    .nav_buttons a{
+        display: inline-flex;
+       background-color:hsl(33, 98%, 51%);
+       color:  hsl(20, 27%, 98%);
+        padding: 1rem 1.5rem;
+       font-family: "Aclonica", sans-serif;
+       border-radius: 4rem;
+       transition: box-shadow .4s;
+       text-decoration: none;
+       margin-top: 500%;
+
+    }
+    .nav_buttons:hover{
+  box-shadow: 0.8px 24px hsla(22, 100%, 8%, .2);
+}
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+      height: 80%;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .image-section {
+      flex: 1;
+      background-image: url(assets/img/i.png);
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: none;
+      width: 100%;
+    }
+
+    .container.active {
+      display: block;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: hsl(33, 98%, 51%);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    .btn {
+      background-color: hsl(33, 98%, 51%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #f2de6c;
+    }
+
+    .form-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .form-link a {
+      color: #febc06;
+      text-decoration: none;
+    }
+
+    .form-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="wrapper">
+    <div class="nav_buttons">
+        <a href="index.html" class="button nav-button">Back To</a>  
+    </div>
+    <div class="image-section"></div>
+    <div class="form-section">
+      <div id="loginContainer" class="container active">
+        <form action="login.html" method="post" id="loginForm" class="form">
+          <h2>"Login and treat your taste buds to a burger bash!"</h2>
+          <div class="form-group">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+          </div>
+          <input type="hidden" name="action" value="login">
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <p class="form-link">Don't have an account? <a href="#" onclick="toggleForms()">Sign up here</a></p>
+      </div>
+
+      <div id="signupContainer" class="container">
+        <form action="login.html" method="POST" id="signupForm" class="form">
+          <h2>heYyyyyyyyy! <br> "Sign up and sink your teeth into the best burgers!"</h2>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="signupUsername">Username</label>
+            <input type="text" id="signupUsername" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" name="password" required>
+          </div>
+          <input type="hidden" name="action" value="signup">
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p class="form-link">Already have an account? <a href="#" onclick="toggleForms()">Login here</a></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    function toggleForms() {
+      const loginContainer = document.getElementById('loginContainer');
+      const signupContainer = document.getElementById('signupContainer');
+      loginContainer.classList.toggle('active');
+      signupContainer.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
